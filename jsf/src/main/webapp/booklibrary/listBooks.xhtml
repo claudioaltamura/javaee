@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<body>
+	<f:view contracts="#{view.locale.language}">
+		<ui:composition template="/default.xhtml">
+			<ui:define name="content">
+				<h1>#{msg['bookList']}</h1>
+				<h:form>
+					<h:dataTable value="#{bookListProducer.books}" var="book">
+					
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="#{msg['book.title']}" />
+							</f:facet>
+							<h:outputText value="#{book.title}" />
+						</h:column>
+					</h:dataTable>
+				</h:form>					
+			</ui:define>
+		</ui:composition>
+
+	</f:view>
+</body>
+</html>
