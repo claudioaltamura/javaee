@@ -2,7 +2,7 @@ package de.claudioaltamura.jsf.booklibray.data;
 
 import java.io.Serializable;
 
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 import de.claudioaltamura.jsf.booklibray.model.Book;

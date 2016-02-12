@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 import de.claudioaltamura.jsf.booklibray.model.Author;
@@ -41,8 +41,19 @@ public class BookListProducer implements Serializable {
 		buildingMicroservices.setPages(278);
 		buildingMicroservices.setTitle("Building Microservices");
 		
+		Author matthias = new Author();
+		matthias.setName("Karl Matthias");
+		
+		Book docker = new Book();
+		docker.setAuthor(matthias);
+		docker.setPublisher(oreilly);
+		docker.setIsbn("978-1491917572");
+		docker.setPages(224);
+		docker.setTitle("Docker - Up and Running");
+
 		List<Book> books = new ArrayList<>();
 		books.add(buildingMicroservices);
+		books.add(docker);		
 		
 		return books;
 	}
