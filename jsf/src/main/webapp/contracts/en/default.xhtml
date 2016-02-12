@@ -6,19 +6,21 @@
 
 <h:head>
 
-	<title>Java EE</title>
+	<title>#{msg['application.name']}</title>
 
 	<meta charset="utf-8" />
 
 </h:head>
 
 <h:body>
-
+	<ui:debug hotkey="x"/>
 	<div id="container">
 
 		<div id="header"></div>
 
-		<p>Beispielanwendung – Workshop Java EE 7</p>
+			<p><h1>#{msg['application.name']}</h1></p>
+			
+			<HR />
 
 		<div id="content">
 
@@ -29,7 +31,7 @@
 		</div>
 
 		<div id="footer">
-
+			<HR />
 			<p>Claudio Altamura</p>
 
 		</div>
