@@ -1,42 +1,25 @@
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-
 <h:head>
-
 	<title>#{msg['application.name']}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 </h:head>
-
 <h:body>
 	<ui:debug hotkey="x"/>
 	<div id="container">
-
 		<div id="header"></div>
-
 			<p><h1>#{msg['application.name']}</h1></p>
-			
 			<HR />
-
 		<div id="content">
-
 			<ui:insert name="content">
-
 			</ui:insert>
-
 		</div>
-
 		<div id="footer">
 			<HR />
-			<p>Claudio Altamura</p>
-
 		</div>
-
 	</div>
-
 </h:body>
 
 </html>

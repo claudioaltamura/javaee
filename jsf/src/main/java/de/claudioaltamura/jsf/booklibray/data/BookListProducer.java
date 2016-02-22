@@ -1,9 +1,11 @@
 package de.claudioaltamura.jsf.booklibray.data;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -20,9 +22,15 @@ public class BookListProducer implements Serializable {
 	private List<Book> books;
 	
 	public BookListProducer() {
+		init();
+	}
+
+	@PostConstruct
+    public void init() {
 		books = createBooks();
 	}
 
+	
 	public List<Book> getBooks() {
 		return books;
 	}
@@ -40,6 +48,7 @@ public class BookListProducer implements Serializable {
 		buildingMicroservices.setIsbn("978-1491950357");
 		buildingMicroservices.setPages(278);
 		buildingMicroservices.setTitle("Building Microservices");
+		buildingMicroservices.setPrice(BigDecimal.valueOf(12.00));
 		
 		Author matthias = new Author();
 		matthias.setName("Karl Matthias");
@@ -50,6 +59,7 @@ public class BookListProducer implements Serializable {
 		docker.setIsbn("978-1491917572");
 		docker.setPages(224);
 		docker.setTitle("Docker - Up and Running");
+		docker.setPrice(BigDecimal.valueOf(10.00));
 
 		List<Book> books = new ArrayList<>();
 		books.add(buildingMicroservices);

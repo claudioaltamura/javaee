@@ -1,7 +1,11 @@
 package de.claudioaltamura.jsf.booklibray.model;
 
-public class Publisher {
+import java.io.Serializable;
 
+public class Publisher implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
 	private String name;
 	
 	public String getName() {
