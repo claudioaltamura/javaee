@@ -3,6 +3,7 @@ package de.claudioaltamura.javaee.jsonp;
 import java.io.InputStream;
 
 import javax.json.Json;
+import javax.json.JsonException;
 import javax.json.stream.JsonParser;
 
 import org.apache.commons.io.IOUtils;
@@ -52,6 +53,9 @@ public class ReadingWithStreamingJsonParser {
 			         break;
 			   }
 			}
+		} catch(JsonException je)
+		{
+			je.printStackTrace();
 		}
 	}
 

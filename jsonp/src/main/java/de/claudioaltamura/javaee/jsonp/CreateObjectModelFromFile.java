@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 import javax.json.Json;
+import javax.json.JsonException;
 import javax.json.JsonReader;
 import javax.json.JsonStructure;
 
@@ -23,6 +24,9 @@ public class CreateObjectModelFromFile {
 		{
 			JsonStructure jsonStructure = reader.read();
 			System.out.println(jsonStructure);
+		} catch(JsonException je)
+		{
+			je.printStackTrace();
 		} finally {
 			IOUtils.closeQuietly(is);
 		}
