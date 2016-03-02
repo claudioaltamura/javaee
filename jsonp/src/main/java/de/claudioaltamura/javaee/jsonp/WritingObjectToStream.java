@@ -1,9 +1,9 @@
 package de.claudioaltamura.javaee.jsonp;
 
-import java.io.IOException;
 import java.io.StringWriter;
 
 import javax.json.Json;
+import javax.json.JsonException;
 import javax.json.JsonObject;
 import javax.json.JsonWriter;
 
@@ -19,21 +19,19 @@ public class WritingObjectToStream {
 				.add("price", 12.0)
 				.add("currency", "EUR")
 				.build();
-
 		
-		try( StringWriter stringWriter = new StringWriter())
-		{
-			writeModel(stringWriter, model);
-			String jsonData = stringWriter.toString();
-			System.out.println(jsonData);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		StringWriter stringWriter = new StringWriter();
+		writeModel(stringWriter, model);
+		String jsonData = stringWriter.toString();
+		System.out.println(jsonData);
 	}
 
 	private static void writeModel(StringWriter stringWriter, JsonObject model) {
 		try (JsonWriter jsonWriter = Json.createWriter(stringWriter)) {
 		   jsonWriter.writeObject(model);
+		} catch(JsonException je)
+		{
+			je.printStackTrace();
 		}
 	}
 }

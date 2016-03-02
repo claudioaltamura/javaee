@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.json.Json;
+import javax.json.JsonException;
 import javax.json.JsonReader;
 import javax.json.JsonStructure;
 import javax.json.stream.JsonGenerator;
@@ -52,6 +53,9 @@ public class WritingWithStreamingJsonGenerator {
 			{
 				JsonStructure read = reader.read();
 				json = read.toString();
+			} catch(JsonException je)
+			{
+				je.printStackTrace();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
