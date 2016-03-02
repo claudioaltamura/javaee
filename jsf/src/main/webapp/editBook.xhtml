@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:body>
+	<f:view contracts="#{view.locale.language}">
+		<ui:composition template="/default.xhtml">
+			<ui:define name="content">
+				<h1>#{msg['editBook.title']}</h1>
+			</ui:define>
+			<div>
+				<h:commandButton value="#{msg['backToListBooks']}"
+						action="#{listBookController.doListBooks}" />
+			</div>			
+		</ui:composition>
+	</f:view>
+</h:body>
+</html>

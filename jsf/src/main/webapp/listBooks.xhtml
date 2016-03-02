@@ -7,7 +7,7 @@
 	<f:view contracts="#{view.locale.language}">
 		<ui:composition template="/default.xhtml">
 			<ui:define name="content">
-				<h1>#{msg['bookList']}</h1>
+				<h1>#{msg['listBooks.title']}</h1>
 				<h:form>
 					<h:dataTable value="#{bookListProducer.books}" var="book">
 						<h:column>
@@ -16,7 +16,39 @@
 							</f:facet>
 							<h:outputText value="#{book.title}" />
 						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="#{msg['book.author']}" />
+							</f:facet>
+							<h:outputText value="#{book.author.name}" />
+						</h:column>						
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="#{msg['book.publisher']}" />
+							</f:facet>
+							<h:outputText value="#{book.publisher.name}" />
+						</h:column>						
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="#{msg['book.price']}" />
+							</f:facet>
+							<h:outputText value="#{book.price}">
+								<f:convertNumber type="currency" currencyCode="EUR" />
+							</h:outputText>
+						</h:column>		
+						<h:column>
+							<h:commandLink value="#{msg['listBooks.edit']}"
+								action="#{listBookController.doEditBook(book)}" />
+						</h:column>				
+						<h:column>
+							<h:commandLink value="#{msg['listBooks.delete']}" 
+								actionListener="#{listBookController.doDeleteBook(book)}" />							
+						</h:column>				
 					</h:dataTable>
+					<div>
+						<h:commandButton value="#{msg['listBooks.add']}"
+								action="#{listBookController.doAddBook}" />
+					</div>
 				</h:form>					
 			</ui:define>
 		</ui:composition>
