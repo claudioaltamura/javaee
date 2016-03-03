@@ -67,5 +67,10 @@ public class BookListProducer implements Serializable {
 		
 		return books;
 	}
+
+	public void removeBook(Book book) {
+		books.remove(book);
+		System.out.println("book " + book.getTitle() + " deleted.");
+	}
 	
 }

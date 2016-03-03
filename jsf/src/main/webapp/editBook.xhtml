@@ -8,11 +8,13 @@
 		<ui:composition template="/default.xhtml">
 			<ui:define name="content">
 				<h1>#{msg['editBook.title']}</h1>
+				<h:form>
+					<div>
+						<h:commandButton value="#{msg['backToListBooks']}"
+								action="#{listBookController.doListBooks}" />
+					</div>	
+				</h:form>			
 			</ui:define>
-			<div>
-				<h:commandButton value="#{msg['backToListBooks']}"
-						action="#{listBookController.doListBooks}" />
-			</div>			
 		</ui:composition>
 	</f:view>
 </h:body>

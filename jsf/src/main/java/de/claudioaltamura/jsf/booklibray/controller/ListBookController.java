@@ -6,6 +6,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import de.claudioaltamura.jsf.booklibray.data.BookListProducer;
 import de.claudioaltamura.jsf.booklibray.data.BookProducer;
 import de.claudioaltamura.jsf.booklibray.model.Book;
 
@@ -15,6 +16,9 @@ public class ListBookController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	@Inject
+	private BookListProducer bookListProducer;
+	
 	@Inject
 	private BookProducer bookProducer;
 	
@@ -38,10 +42,7 @@ public class ListBookController implements Serializable {
     public void doDeleteBook(Book book) {
         this.book = book;
         System.out.println("Book marked as deleted");
-    }
-
-    public void commitDeleteBook() {
-        System.out.println("Book deleted");
+        bookListProducer.removeBook(book);
     }
 
 }
