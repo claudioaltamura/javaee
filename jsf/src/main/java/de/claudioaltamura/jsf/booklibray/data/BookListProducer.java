@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
@@ -19,6 +21,8 @@ public class BookListProducer implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
+	private final static Logger LOGGER = Logger.getLogger(BookListProducer.class.getName()); 
+
 	private List<Book> books;
 	
 	public BookListProducer() {
@@ -29,7 +33,6 @@ public class BookListProducer implements Serializable {
     public void init() {
 		books = createBooks();
 	}
-
 	
 	public List<Book> getBooks() {
 		return books;
@@ -70,7 +73,7 @@ public class BookListProducer implements Serializable {
 
 	public void removeBook(Book book) {
 		books.remove(book);
-		System.out.println("book " + book.getTitle() + " deleted.");
+		LOGGER.log(Level.INFO, "Book marked as deleted");
 	}
 	
 }

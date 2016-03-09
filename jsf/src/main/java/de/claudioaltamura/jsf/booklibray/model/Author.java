@@ -6,7 +6,7 @@ public class Author implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-	private String name;
+	private String name = "";
 
 	public String getName() {
 		return name;

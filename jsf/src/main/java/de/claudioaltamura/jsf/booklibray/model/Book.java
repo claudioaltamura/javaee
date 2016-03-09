@@ -10,9 +10,9 @@ public class Book implements Serializable  {
 	private String title;
 	private int pages;
 	private String isbn;
-	private Author author;
-	private Publisher publisher;
-	private BigDecimal price;
+	private Author author = new Author();
+	private Publisher publisher = new Publisher();
+	private BigDecimal price = new BigDecimal(0.0);
 	
 	public String getTitle() {
 		return title;
