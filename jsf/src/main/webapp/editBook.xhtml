@@ -8,6 +8,13 @@
 		<ui:composition template="/default.xhtml">
 			<ui:define name="content">
 				<h1>#{msg['editBook.title']}</h1>
+				<ui:param name="errorMessages" value="#{facesContext.getMessageList()}" />
+				<h:panelGroup rendered="#{not empty errorMessages}" styleClass="errorMsg">
+				  <h:outputText value="Form Submission was not successful; Please review and correct listed errors and then resubmit " 
+				      escape="false"/>
+				  <br />
+				  <h:messages style="color: red" globalOnly="false"/>
+				</h:panelGroup>				
 				<h:form>
 					<h:panelGrid columns="3">
 						<h:outputLabel>
