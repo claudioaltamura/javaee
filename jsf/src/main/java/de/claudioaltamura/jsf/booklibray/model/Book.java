@@ -2,17 +2,27 @@ package de.claudioaltamura.jsf.booklibray.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class Book implements Serializable  {
 
 	private static final long serialVersionUID = 1L;
 
+	private Date date;
 	private String title;
 	private int pages;
 	private String isbn;
 	private Author author = new Author();
 	private Publisher publisher = new Publisher();
 	private BigDecimal price = new BigDecimal(0.0);
+	
+	public Date getDate() {
+		return date;
+	}
+	
+	public void setDate(Date date) {
+		this.date = date;
+	}
 	
 	public String getTitle() {
 		return title;
@@ -67,6 +77,7 @@ public class Book implements Serializable  {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((author == null) ? 0 : author.hashCode());
+		result = prime * result + ((date == null) ? 0 : date.hashCode());
 		result = prime * result + ((isbn == null) ? 0 : isbn.hashCode());
 		result = prime * result + pages;
 		result = prime * result + ((price == null) ? 0 : price.hashCode());
@@ -89,6 +100,11 @@ public class Book implements Serializable  {
 			if (other.author != null)
 				return false;
 		} else if (!author.equals(other.author))
+			return false;
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
 			return false;
 		if (isbn == null) {
 			if (other.isbn != null)
@@ -117,9 +133,9 @@ public class Book implements Serializable  {
 
 	@Override
 	public String toString() {
-		return "Book [title=" + title + ", pages=" + pages + ", isbn=" + isbn
-				+ ", author=" + author + ", publisher=" + publisher
-				+ ", price=" + price + "]";
+		return "Book [date=" + date + ", title=" + title + ", pages=" + pages
+				+ ", isbn=" + isbn + ", author=" + author + ", publisher="
+				+ publisher + ", price=" + price + "]";
 	}
-	
+
 }

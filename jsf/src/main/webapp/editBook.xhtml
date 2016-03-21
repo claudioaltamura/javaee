@@ -18,6 +18,14 @@
 						</h:inputText>
 						<h:message for="title" style="color:red" />
 						<h:outputLabel>
+							<h:outputText value="#{msg['book.date']} :" />
+						</h:outputLabel>
+						<h:inputText id="date" value="#{bookProducer.selectedBook.date}" validatorMessage="#{msg['book.date.error']}">
+							<f:validateRequired/>
+							<f:convertDateTime pattern="MM/dd/yyyy" type="date"/>
+						</h:inputText>
+						<h:message for="date" style="color:red" />
+						<h:outputLabel>
 							<h:outputText value="#{msg['book.pages']} :" />
 						</h:outputLabel>
 						<h:inputText id="pages" value="#{bookProducer.selectedBook.pages}" validatorMessage="#{msg['book.pages.error']}">
@@ -28,21 +36,21 @@
 							<h:outputText value="#{msg['book.isbn']} :" />
 						</h:outputLabel>
 						<h:inputText id="isbn" value="#{bookProducer.selectedBook.isbn}" validatorMessage="#{msg['book.isbn.error']}">
-							<f:validateLength minimum="15" maximum="15"/>
+							<f:validator validatorId="isbnValidator"/>
 						</h:inputText>
 						<h:message for="isbn" style="color:red" />
 						<h:outputLabel>
 							<h:outputText value="#{msg['book.author']} :" />
 						</h:outputLabel>
 						<h:inputText id="author" value="#{bookProducer.selectedBook.author.name}" validatorMessage="#{msg['book.author.error']}">
-							<f:validateLength minimum="3" maximum="50"/>
+							<f:validateLength minimum="2" maximum="50"/>
 						</h:inputText>
 						<h:message for="author" style="color:red" />
 						<h:outputLabel>
 							<h:outputText value="#{msg['book.publisher']} : " />
 						</h:outputLabel>
 						<h:inputText id="publisher" value="#{bookProducer.selectedBook.publisher.name}" validatorMessage="#{msg['book.publisher.error']}">
-							<f:validateLength minimum="3" maximum="50"/>
+							<f:validateLength minimum="2" maximum="50"/>
 						</h:inputText>
 						<h:message for="publisher" style="color:red" />
 						<h:outputLabel>

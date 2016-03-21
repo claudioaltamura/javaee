@@ -3,6 +3,8 @@ package de.claudioaltamura.jsf.booklibray.data;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -47,8 +49,10 @@ public class BookListProducer implements Serializable {
 		
 		Book buildingMicroservices = new Book();
 		buildingMicroservices.setAuthor(newMan);
+		GregorianCalendar gregorianCalendar = new GregorianCalendar(2015,2,1);
+		buildingMicroservices.setDate(gregorianCalendar.getTime());
 		buildingMicroservices.setPublisher(oreilly);
-		buildingMicroservices.setIsbn("978-1491950357");
+		buildingMicroservices.setIsbn("543210987654321");
 		buildingMicroservices.setPages(278);
 		buildingMicroservices.setTitle("Building Microservices");
 		buildingMicroservices.setPrice(BigDecimal.valueOf(12.00));
@@ -58,8 +62,10 @@ public class BookListProducer implements Serializable {
 		
 		Book docker = new Book();
 		docker.setAuthor(matthias);
+		GregorianCalendar gregorianCalendar2 = new GregorianCalendar(2016,2,1);
+		docker.setDate(gregorianCalendar2.getTime());
 		docker.setPublisher(oreilly);
-		docker.setIsbn("978-1491917572");
+		docker.setIsbn("123456789012345");
 		docker.setPages(224);
 		docker.setTitle("Docker - Up and Running");
 		docker.setPrice(BigDecimal.valueOf(10.00));

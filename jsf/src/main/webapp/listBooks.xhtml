@@ -24,6 +24,14 @@
 						</h:column>						
 						<h:column>
 							<f:facet name="header">
+								<h:outputText value="#{msg['book.date']}"/>
+							</f:facet>
+							<h:outputText value="#{book.date}" >
+								<f:convertDateTime type="date" pattern="MM/dd/yyyy" />
+							</h:outputText>
+						</h:column>						
+						<h:column>
+							<f:facet name="header">
 								<h:outputText value="#{msg['book.publisher']}" />
 							</f:facet>
 							<h:outputText value="#{book.publisher.name}" />
