@@ -49,9 +49,11 @@
 						<h:outputLabel>
 							<h:outputText value="#{msg['book.author']} :" />
 						</h:outputLabel>
-						<h:inputText id="author" value="#{bookProducer.selectedBook.author.name}" validatorMessage="#{msg['book.author.error']}">
-							<f:validateLength minimum="2" maximum="50"/>
-						</h:inputText>
+				   		<h:selectOneMenu value="#{bookProducer.selectedBook.author.name}">
+				   			<f:selectItems value="#{authorListProducer.list}" var="c"
+				   			itemLabel="#{c.label}" itemValue="#{c.value}" />
+				   			<f:validateRequired/>
+				   		</h:selectOneMenu>						
 						<h:message for="author" style="color:red" />
 						<h:outputLabel>
 							<h:outputText value="#{msg['book.publisher']} : " />
