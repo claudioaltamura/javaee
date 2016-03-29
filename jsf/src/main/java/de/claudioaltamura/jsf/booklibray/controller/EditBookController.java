@@ -39,6 +39,7 @@ public class EditBookController implements Serializable {
 	}
 	
 	public String doCancel() {
+		LOGGER.log(Level.INFO, "doCancel");
 		bookProducer.setSelectedBook(null);
 		
 		return Pages.LIST_BOOKS;
