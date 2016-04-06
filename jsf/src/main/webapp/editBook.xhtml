@@ -35,7 +35,7 @@
 						<h:outputLabel>
 							<h:outputText value="#{msg['book.pages']} :" />
 						</h:outputLabel>
-						<h:inputText id="pages" value="#{bookProducer.selectedBook.pages}" validatorMessage="#{msg['book.pages.error']}">
+						<h:inputText id="pages" value="#{bookProducer.selectedBook.pages == 0 ? '' : bookProducer.selectedBook.pages}" validatorMessage="#{msg['book.pages.error']}">
 							<f:validateLongRange minimum="1" maximum="10000"/>
 						</h:inputText>
 						<h:message for="pages" style="color:red" />
@@ -65,11 +65,18 @@
 						<h:outputLabel>
 							<h:outputText value="#{msg['book.price']} :" />
 						</h:outputLabel>
-						<h:inputText id="price" value="#{bookProducer.selectedBook.price}" validatorMessage="#{msg['book.price.error']}">
+						<h:inputText id="price" value="#{bookProducer.selectedBook.price == 0.00 ? '' : bookProducer.selectedBook.price}" validatorMessage="#{msg['book.price.error']}">
 							<f:convertNumber maxFractionDigits="2" minFractionDigits="2"/>
 							<f:validateDoubleRange minimum="0.1"/>						
 						</h:inputText>
 						<h:message for="price" style="color:red" />
+						<h:outputLabel>
+							<h:outputText value="#{msg['book.description']} :" />
+						</h:outputLabel>
+						<h:inputTextarea id="description" value="#{bookProducer.selectedBook.description}" />
+						<h:commandButton value="#{msg['book.description.generate']}" >
+			    			<f:ajax event="click" execute="description" listener="#{bookProducer.selectedBook.generateDescription}" render="description"/>
+    	   				</h:commandButton>
 					</h:panelGrid>
 					<p/>
 					<h:commandButton value="#{msg['save']}"
