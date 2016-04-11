@@ -3,15 +3,10 @@ package de.claudioaltamura.jsf.booklibray.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Book implements Serializable  {
 
 	private static final long serialVersionUID = 1L;
-	
-	private final static Logger LOGGER = Logger.getLogger(Book.class.getName()); 
 
 	private Date date;
 	private String title;
@@ -21,7 +16,7 @@ public class Book implements Serializable  {
 	private Publisher publisher = new Publisher();
 	private BigDecimal price = new BigDecimal(0.0);
 	private String description = "";
-	private AtomicLong counter = new AtomicLong(0);
+
 	
 	public Date getDate() {
 		return date;
@@ -74,18 +69,7 @@ public class Book implements Serializable  {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	public void generateDescription() {
-		LOGGER.log(Level.INFO, "generate description== 0");
-		long cnt = counter.incrementAndGet();
-		String generatedDescription = "good book"; 
-		if(cnt % 2 == 0) {
-			generatedDescription = "very good book";
-		}
-	
-		this.description += " - " + generatedDescription;
-	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

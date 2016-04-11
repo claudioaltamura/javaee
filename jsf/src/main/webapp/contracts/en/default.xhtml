@@ -5,6 +5,30 @@
 <h:head>
 	<title>#{msg['application.name']}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script>
+			booklibrary = {
+				monitor:
+				function (data){
+					var loading = document.getElementById("j_idt12:image");
+					if(data.status == "begin"){
+						loading.style.display = "block";
+					}
+					else if(data.status == "success"){
+						loading.style.display = "none";
+					}
+				},
+				handle:
+				function(data){
+					console.log("Error Description: "+data.description);
+					console.log("Error Name: "+data.errorName);
+					console.log("Error errorMessage: "+data.errorMessage);
+					console.log("httpError: "+data.httpError);
+					console.log("emptyResponse: "+data.emptyResponse);
+					console.log("maleformed: "+data.maleformed);
+					console.log("serverError: "+data.serverError);
+				}
+			}
+	</script>
 </h:head>
 <h:body>
 	<ui:debug hotkey="x"/>

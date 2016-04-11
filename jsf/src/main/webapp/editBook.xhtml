@@ -74,8 +74,10 @@
 							<h:outputText value="#{msg['book.description']} :" />
 						</h:outputLabel>
 						<h:inputTextarea id="description" value="#{bookProducer.selectedBook.description}" />
+						<h:graphicImage id="image" library="images" name="ajax-loader.gif" style="display:none;"></h:graphicImage>
 						<h:commandButton value="#{msg['book.description.generate']}" >
-			    			<f:ajax event="click" execute="description" listener="#{bookProducer.selectedBook.generateDescription}" render="description"/>
+			    			<f:ajax event="click" execute="description" listener="#{editBookController.generateDescription}" 
+			    			render="description" onevent="booklibrary.monitor" onerror="booklibrary.handle"/>
     	   				</h:commandButton>
 					</h:panelGrid>
 					<p/>

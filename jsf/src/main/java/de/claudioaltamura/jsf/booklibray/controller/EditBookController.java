@@ -1,6 +1,7 @@
 package de.claudioaltamura.jsf.booklibray.controller;
 
 import java.io.Serializable;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,6 +21,8 @@ public class EditBookController implements Serializable {
 	
 	private final static Logger LOGGER = Logger.getLogger(EditBookController.class.getName()); 
 
+	private AtomicLong counter = new AtomicLong(0);
+	
 	@Inject
 	private BookListProducer bookListProducer;
 
@@ -44,5 +47,23 @@ public class EditBookController implements Serializable {
 		
 		return Pages.LIST_BOOKS;
 	}
+	
+	
+	public void generateDescription() throws InterruptedException {
+		LOGGER.log(Level.INFO, "generate description");
+		
+		Book editedBook = bookProducer.getSelectedBook();
+		
+		Thread.sleep(3000);
+		
+		long cnt = counter.incrementAndGet();
+		String generatedDescription = "good book"; 
+		if(cnt % 2 == 0) {
+			generatedDescription = "very good book";
+		}
+	
+		editedBook.setDescription(editedBook.getDescription() + " - " + generatedDescription);
+	}
+	
 
 }
