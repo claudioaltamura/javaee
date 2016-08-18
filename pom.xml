@@ -22,6 +22,7 @@
 	</properties>
 
 	<modules>
+		<module>cdi</module>
 		<module>jsonp</module>
 		<module>jsf</module>
 	</modules>
