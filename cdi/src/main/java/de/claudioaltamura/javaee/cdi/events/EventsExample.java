@@ -10,10 +10,12 @@ public class EventsExample {
 		weld.disableDiscovery();
 		weld.addPackages(true, PersonService.class);
 		WeldContainer container = weld.initialize();
+		
 		PersonService personService = container.instance().select(PersonService.class).get();
 		Person person = personService.create();
 		person.setName("Me2");
 		personService.update(person);
+		
 		weld.shutdown();
 	}
 }
