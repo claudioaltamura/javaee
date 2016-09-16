@@ -5,7 +5,7 @@ import javax.enterprise.event.Observes;
 import de.claudioaltamura.javaee.cdi.events.annotations.New;
 import de.claudioaltamura.javaee.cdi.events.annotations.Updated;
 
-public class Client {
+public class Observer {
 	
 	public void onAnyEvent(@Observes Person person) {
 		String action = "any Event: person";
