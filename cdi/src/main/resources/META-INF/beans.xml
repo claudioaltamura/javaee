@@ -8,7 +8,7 @@
        </decorators>                    	
                            	
         <interceptors>
-        <!--<class>de.claudioaltamura.javaee.cdi.interceptor.Loggable</class>-->
+        	<class>de.claudioaltamura.javaee.cdi.interceptor.LoggingInterceptor</class>
        </interceptors>
        
 </beans>
