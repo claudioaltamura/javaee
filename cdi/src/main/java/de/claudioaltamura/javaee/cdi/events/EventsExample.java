@@ -7,8 +7,6 @@ public class EventsExample {
 
 	public static void main(String[] args) {
 		Weld weld = new Weld();
-		weld.disableDiscovery();
-		weld.addPackages(true, PersonService.class);
 		WeldContainer container = weld.initialize();
 		
 		PersonService personService = container.instance().select(PersonService.class).get();
