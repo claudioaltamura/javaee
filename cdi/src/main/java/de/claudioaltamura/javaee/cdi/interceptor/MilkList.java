@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MilkList {
 
-	@Loggable
+	@Logged
 	public List<String> getList() {
 		List<String> list = new ArrayList<>();
 		list.add("Milk");
