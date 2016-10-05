@@ -7,8 +7,6 @@ public class QualifierExample {
 
 	public static void main(String[] args) {
 		Weld weld = new Weld();
-		weld.disableDiscovery();
-		weld.addPackages(true, Service.class);
 		WeldContainer container = weld.initialize();
 		
 		Client client = container.select(Client.class).get();

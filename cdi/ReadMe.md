@@ -1,9 +1,10 @@
 CDI
 ===
 
-Working examples
+examples for
 
-Decorator
-Interceptor
+* Decorator
+* Events
+* Interceptor
 
 Inject

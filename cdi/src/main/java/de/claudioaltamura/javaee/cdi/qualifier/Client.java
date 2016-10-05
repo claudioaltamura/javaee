@@ -1,7 +1,6 @@
 package de.claudioaltamura.javaee.cdi.qualifier;
 
-import static de.claudioaltamura.javaee.cdi.qualifier.TypeEnum.A;
-import static de.claudioaltamura.javaee.cdi.qualifier.TypeEnum.B;
+import static de.claudioaltamura.javaee.cdi.qualifier.TypeEnum.*;
 
 import javax.inject.Inject;
 
@@ -9,6 +8,7 @@ public class Client {
 
 	@Inject @Type(A)
 	private Service ifA;
+	
 	@Inject @Type(B)
 	private Service ifB;
 	
