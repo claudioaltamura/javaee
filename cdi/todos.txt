@@ -1,0 +1,57 @@
+Real-life check
+==============
+@Interceptor
+@PreDestroy
+@PostConstruct
+@Produces
+@Consumes
+@Inject
+@Name
+
+@Decorator ?
+
+Weitere Examples schreiben
+@Singelton
+@PreDestroy
+@PostConstruct
+@Produces
+@Consumes
+@ApplicationScope
+@Alternative
+Stereotypes
+Eigene Annotations
+
+Deltaspike
+==========
+
+https://deltaspike.apache.org/
+
+DeltaSpike CdiContainer
+
+Seiten
+======
+http://weld.cdi-spec.org/documentation/
+http://docs.jboss.org/weld/reference/latest/en-US/html/
+http://docs.jboss.org/weld/reference/latest-master/en-US/html/environments.html#weld-se
+
+http://www.cdi-spec.org/learn/
+
+http://docs.jboss.org/cdi/learn/userguide/CDI-user-guide.html
+http://docs.jboss.org/weld/reference/latest/en-US/html_single/
+http://docs.oracle.com/javaee/7/tutorial/partcdi.htm#GJBNR
+
+http://cdiatwork.irian.at/book_de/introduction.html#!idx:/introduction.html:1
+http://www.cdi-spec.org/learn/
+http://cdi-spec.org/
+http://weld.cdi-spec.org/
+http://docs.jboss.org/cdi/learn/userguide/CDI-user-guide.html
+
+https://jaxenter.de/cdi-geht-fremd-dependency-injection-fur-javase-5039
+https://jaxenter.de/version-2-0-der-cdi-specification-auch-in-java-se-nutzbar-23149
+https://deltaspike.apache.org/documentation/cdiimp.htmlhttp://openbook.rheinwerk-verlag.de/java7/1507_17_002.html#dodtpd15cd387-80e9-41c2-9219-ebc6c0a1cc30
+http://stackoverflow.com/questions/20935977/what-is-the-easiest-way-to-have-cdi-and-jpa-in-java-se
+http://javaeesquad.blogspot.de/2014/12/cdi-for-java-se-already-standardised.html
+https://rterp.wordpress.com/2015/05/15/using-dependency-injection-in-a-java-se-application/
+
+http://docs.jboss.org/weld/reference/latest/en-US/html_single/
+https://docs.oracle.com/javaee/7/tutorial/index.html

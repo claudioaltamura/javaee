@@ -3,8 +3,7 @@ CDI
 
 examples for
 
-* Decorator
-* Events
-* Interceptor
-
-Inject
+* @Decorator
+* @Events
+* @Interceptor
+* @Qualifier

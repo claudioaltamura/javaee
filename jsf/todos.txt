@@ -1,0 +1,6 @@
+rest + jsf
+
+http://www.ibm.com/developerworks/webservices/library/wa-spring3webserv/index.html
+http://www.codebulb.ch/2015/05/restful-jsf-with-post-redirect-get-part-1.html
+
+http://jsfatwork.irian.at/book_de/introduction.html

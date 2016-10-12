@@ -8,7 +8,7 @@ public class InterceptorExample {
 	public static void main(String[] args) {
 		Weld weld = new Weld();
 		WeldContainer container = weld.initialize();
-		MilkList list = container.instance().select(MilkList.class, MilkList.class.getAnnotations()).get();
+		MilkList list = container.select(MilkList.class).get();
 		list.getList();
 		container.shutdown();
 	}
