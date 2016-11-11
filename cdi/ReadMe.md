@@ -1,7 +1,7 @@
 CDI
 ===
 
-examples for
+CDI WELD examples for
 
 * @Decorator
 * @Events
