@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -15,8 +14,8 @@
 	<properties>
 		<projectName>JavaEE</projectName>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<source-version>1.7</source-version>
-		<target-version>1.7</target-version>
+		<source-version>1.8</source-version>
+		<target-version>1.8</target-version>
 		<junit-version>4.12</junit-version>
 		<maven-compiler-plugin-version>3.5.1</maven-compiler-plugin-version>
 	</properties>
@@ -25,7 +24,8 @@
 		<module>cdi</module>
 		<module>jsonp</module>
 		<module>jsf</module>
-	</modules>
+        <module>jaxrs</module>
+  </modules>
 
 	<dependencyManagement>
 		<dependencies>
@@ -35,6 +35,11 @@
 				<version>${junit-version}</version>
 				<scope>test</scope>
 			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.17</version>
+			</dependency>   			
 		</dependencies>
 	</dependencyManagement>
 
