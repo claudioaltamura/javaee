@@ -26,6 +26,7 @@
 		<module>jsf</module>
         <module>jaxrs</module>
         <module>beanvalidation</module>
+    	<module>servlets</module>
   </modules>
 
 	<dependencyManagement>
