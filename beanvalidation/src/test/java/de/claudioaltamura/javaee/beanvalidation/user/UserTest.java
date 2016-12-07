@@ -1,5 +1,8 @@
 package de.claudioaltamura.javaee.beanvalidation.user;
 
+import static de.claudioaltamura.javaee.beanvalidation.BeanvalidationTestUtils.logViolations;
+import static org.junit.Assert.assertEquals;
+
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
@@ -7,13 +10,9 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
-import org.apache.log4j.Logger;
-import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class UserTest {
-
-	private final static Logger LOGGER = Logger.getLogger(UserTest.class.getName());
 
 	@Test
 	public void test() {
@@ -96,12 +95,6 @@ public class UserTest {
 		logViolations(violations);
 		assertEquals(violations.isEmpty(), false);
 		assertEquals(violations.size(), 3);
-	}
-
-	private void logViolations(Set<ConstraintViolation<User>> violations) {
-		for (ConstraintViolation<User> violation : violations) {
-			LOGGER.error(violation.getMessage());
-		}
 	}
 
 }
