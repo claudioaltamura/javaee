@@ -15,7 +15,7 @@ public class BeanvalidationTestUtils {
 
 	public static <T> void logViolations(Set<ConstraintViolation<T>> violations) {
 		for (ConstraintViolation<T> violation : violations) {
-			LOGGER.error(violation.getRootBean().getClass().getSimpleName() + " - " + violation.getPropertyPath() + " - " + violation.getMessage());
+			LOGGER.error(violation.getRootBean().getClass().getSimpleName() + " - " + violation.getPropertyPath() + " - " + violation.getMessage() + ": " + violation.getInvalidValue());
 		}
 	}
 

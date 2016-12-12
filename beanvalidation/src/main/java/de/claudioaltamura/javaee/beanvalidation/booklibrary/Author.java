@@ -41,4 +41,9 @@ public class Author {
 		this.email = email;
 	}
 
+	@Override
+	public String toString() {
+		return "Author [name=" + name + ", books=" + books + ", email=" + email + "]";
+	}
+
 }

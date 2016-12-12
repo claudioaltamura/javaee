@@ -42,4 +42,9 @@ public class Publisher implements Serializable {
 		this.authors = authors;
 	}
 
+	@Override
+	public String toString() {
+		return "Publisher [name=" + name + ", books=" + books + ", authors=" + authors + "]";
+	}
+
 }

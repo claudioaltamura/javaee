@@ -3,6 +3,7 @@ package de.claudioaltamura.javaee.beanvalidation.booklibrary;
 import static de.claudioaltamura.javaee.beanvalidation.BeanvalidationTestUtils.logViolations;
 import static org.junit.Assert.assertEquals;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Set;
@@ -23,8 +24,11 @@ public class BookTest {
 
 		Book book = new Book();
 		LocalDate date = LocalDate.now();
-		date.plusDays(1);
-		book.setDate(Date.valueOf(date));
+		book.setDate(Date.valueOf(date.plusDays(1)));
+		book.setIsbn("dsf"); //978-3423261272
+		book.setPrice(new BigDecimal("-0.01"));
+		book.setPages(-1);
+		System.out.println(book);
 
 		Set<ConstraintViolation<Book>> violations = validator.validate(book);
 

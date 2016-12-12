@@ -10,22 +10,21 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 public class Book {
 
-	@Past //TODO: Not working?
+	@Past
+	//@Future
 	private Date date;
 
-	@NotBlank
+	//@NotBlank
 	private String title;
 
 	@Min(value = 1)
-    @Max(value = 10000)
+	@Max(value = 10000)
+	//@Size(min = 5, max = 100)
 	private int pages;
 
 	@Pattern(regexp="(?=.{13}$)\\d{1,5}([- ])\\d{1,7}\\1\\d{1,6}\\1(\\d|X)")
-	//TODO: Not working?
 	private String isbn;
 
 	private Author author = new Author();
@@ -34,10 +33,10 @@ public class Book {
 
 	@DecimalMin("0.00")
 	@DecimalMax("1000000.00")
-	//TODO: Not working?
+	//@Digits(integer=,fraction=)
 	private BigDecimal price;
 
-	@NotBlank
+	//@NotBlank
 	private String description;
 
 	public Date getDate() {
@@ -102,6 +101,12 @@ public class Book {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [date=" + date + ", title=" + title + ", pages=" + pages + ", isbn=" + isbn + ", author=" + author
+				+ ", publisher=" + publisher + ", price=" + price + ", description=" + description + "]";
 	}
 
 }
