@@ -1,13 +1,10 @@
 package de.claudioaltamura.javaee.beanvalidation.booklibrary;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
-public class Publisher implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class Publisher {
 
 	@NotNull
 	private String name;
