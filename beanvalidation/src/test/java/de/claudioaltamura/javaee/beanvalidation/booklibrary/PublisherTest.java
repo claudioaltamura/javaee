@@ -15,7 +15,7 @@ import org.junit.Test;
 public class PublisherTest {
 
 	@Test
-	public void getName() {
+	public void test() {
 		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 		Validator validator = factory.getValidator();
 

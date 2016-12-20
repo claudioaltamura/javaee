@@ -18,7 +18,7 @@ import org.junit.Test;
 public class BookTest {
 
 	@Test
-	public void testGetName() {
+	public void test() {
 		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 		Validator validator = factory.getValidator();
 
