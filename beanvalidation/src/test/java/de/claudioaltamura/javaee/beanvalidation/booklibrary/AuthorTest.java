@@ -1,7 +1,7 @@
 package de.claudioaltamura.javaee.beanvalidation.booklibrary;
 
 import static de.claudioaltamura.javaee.beanvalidation.BeanvalidationTestUtils.logViolations;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.Set;
 
@@ -15,7 +15,7 @@ import org.junit.Test;
 public class AuthorTest {
 
 	@Test
-	public void testGetName() {
+	public void testObject() {
 		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 		Validator validator = factory.getValidator();
 
@@ -28,5 +28,18 @@ public class AuthorTest {
 
 		assertEquals(violations.isEmpty(), false);
 	}
+
+	@Test
+	public void testSingleProperty() {
+		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+		Validator validator = factory.getValidator();
+
+		Author author = new Author();
+		author.setEmail("dbad.de");
+		Set<ConstraintViolation<Author>> validatedProperty = validator.validateProperty(author, "email");
+
+		assertTrue(validatedProperty.size()==1);
+	}
+
 
 }
