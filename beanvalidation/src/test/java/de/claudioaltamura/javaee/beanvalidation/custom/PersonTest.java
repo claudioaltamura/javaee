@@ -22,7 +22,7 @@ public class PersonTest {
 		Set<ConstraintViolation<Person>> constraintViolations = v.validate(p);
 		logViolations(constraintViolations);
 
-		assertTrue(constraintViolations.size()==2);
+		assertTrue(constraintViolations.size()==3);
 	}
 
 }
