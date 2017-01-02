@@ -3,6 +3,8 @@ package de.claudioaltamura.javaee.beanvalidation.booklibrary;
 import static de.claudioaltamura.javaee.beanvalidation.BeanvalidationTestUtils.logViolations;
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
@@ -21,6 +23,10 @@ public class AuthorTest {
 
 		Author author = new Author();
 		author.setEmail("dbad.de");
+		List<Book> books = new ArrayList<>();
+		Book book = new Book();
+		books.add(book);
+		author.setBooks(books);
 
 		Set<ConstraintViolation<Author>> violations = validator.validate(author);
 

@@ -2,6 +2,8 @@ package de.claudioaltamura.javaee.beanvalidation.booklibrary;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -12,6 +14,7 @@ public class Author {
 	private String name;
 
     @NotEmpty
+    @Valid
     private List<Book> books;
 
     @Email

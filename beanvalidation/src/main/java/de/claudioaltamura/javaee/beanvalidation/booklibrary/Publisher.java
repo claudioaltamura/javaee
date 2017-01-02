@@ -2,6 +2,7 @@ package de.claudioaltamura.javaee.beanvalidation.booklibrary;
 
 import java.util.List;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 public class Publisher {
@@ -10,9 +11,11 @@ public class Publisher {
 	private String name;
 
 	@NotNull
+	@Valid
 	private List<Book> books;
 
 	@NotNull
+	@Valid
 	private List<Author> authors;
 
 	public String getName() {
