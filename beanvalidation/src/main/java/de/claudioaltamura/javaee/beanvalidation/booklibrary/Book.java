@@ -19,9 +19,8 @@ public class Book {
 	//@NotBlank
 	private String title;
 
-	@Min(value = 1)
+	@Min(value = 1, message="{book.pages}")
 	@Max(value = 10000)
-	//@Size(min = 5, max = 100)
 	private int pages;
 
 	@Pattern(regexp="(?=.{13}$)\\d{1,5}([- ])\\d{1,7}\\1\\d{1,6}\\1(\\d|X)")
