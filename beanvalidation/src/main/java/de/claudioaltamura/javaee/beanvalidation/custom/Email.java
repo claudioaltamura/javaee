@@ -18,7 +18,7 @@ import javax.validation.Payload;
 @Documented
 public @interface Email
 {
-  String message() default "ist keine gültige E-Mail-Adresse";
+  String message() default "no valid email address";
   Class<?>[] groups() default {};
   Class<? extends Payload>[] payload() default {};
 }
