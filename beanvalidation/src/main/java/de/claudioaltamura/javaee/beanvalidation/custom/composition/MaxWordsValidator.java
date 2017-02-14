@@ -1,16 +1,16 @@
-package de.claudioaltamura.javaee.beanvalidation.custom.minwords;
+package de.claudioaltamura.javaee.beanvalidation.custom.composition;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class MinWordsValidator implements ConstraintValidator<MinWords, String> {
+public class MaxWordsValidator implements ConstraintValidator<MaxWords, String> {
 
-	private long minValue;
+	private long maxValue;
 	private boolean inclusive;
 
 	@Override
-	public void initialize(MinWords constraintAnnotation) {
-		minValue = constraintAnnotation.value();
+	public void initialize(MaxWords constraintAnnotation) {
+		maxValue = constraintAnnotation.value();
 		inclusive = constraintAnnotation.inclusive();
 	}
 
@@ -22,9 +22,9 @@ public class MinWordsValidator implements ConstraintValidator<MinWords, String> 
 			return false;
 
 		if(inclusive)
-			isValid = Integer.valueOf(value.length()) >= minValue;
+			isValid = Integer.valueOf(value.length()) >= maxValue;
 		else
-			isValid = Integer.valueOf(value.length()) > minValue;
+			isValid = Integer.valueOf(value.length()) > maxValue;
 
 		return isValid;
 	}
