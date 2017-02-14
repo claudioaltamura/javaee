@@ -23,14 +23,6 @@ public class MinWordsValidator implements ConstraintValidator<MinWords, String> 
 		else
 			isValid = Integer.valueOf(value.length()) > minValue;
 
-//		if(!isValid) {
-//			constraintValidatorContext.disableDefaultConstraintViolation();
-//			constraintValidatorContext
-//			.buildConstraintViolationWithTemplate( "{my.custom.template}" )
-//			.addPropertyNode( "foreword" ).addConstraintViolation();
-//
-//		}
-
 		return isValid;
 	}
 

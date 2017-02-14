@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Content {
 
-	@MinWords(value = 10)
+	@MinWords(10)
 	private String foreword;
 
 	private List<Page> pages;
