@@ -17,7 +17,7 @@ import org.junit.Test;
 public class AuthorTest {
 
 	@Test
-	public void testObject() {
+	public void testWithValid() {
 		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 		Validator validator = factory.getValidator();
 
@@ -46,6 +46,5 @@ public class AuthorTest {
 
 		assertTrue(validatedProperty.size()==1);
 	}
-
 
 }

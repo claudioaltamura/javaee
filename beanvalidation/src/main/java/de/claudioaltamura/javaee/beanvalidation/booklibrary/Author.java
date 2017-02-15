@@ -10,15 +10,15 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class Author {
 
-    @NotBlank(message = "name not blank")
+	@NotBlank(message = "name not blank")
 	private String name;
 
-    @NotEmpty
-    @Valid
-    private List<Book> books;
+	@NotEmpty
+	@Valid
+	private List<Book> books;
 
-    @Email
-    private String email;
+	@Email
+	private String email;
 
 	public String getName() {
 		return name;

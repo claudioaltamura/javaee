@@ -26,7 +26,6 @@ public class MinWordsTest {
 		assertEquals( 1, constraintViolations.size() );
 		assertEquals("too short", constraintViolations.iterator().next().getMessage()
 		);
-
 	}
 
 }

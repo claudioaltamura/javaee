@@ -17,10 +17,10 @@ public class Author {
 	@NotBlank(message = "name not blank", groups = NameValidation.class )
 	private String name;
 
-    @NotEmpty
-    private List<Book> books;
+	@NotEmpty
+	private List<Book> books;
 
-    @Min(value = 10,  groups = AgeValidation.class )
-    private int age;
+	@Min(value = 10,  groups = AgeValidation.class )
+	private int age;
 
 }
