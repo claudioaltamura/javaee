@@ -22,9 +22,10 @@ public class HelloWorldApplicationTest {
 
 	@Before
 	public void setUp() {
-        server = HelloWorldApplication.startServer();
-        Client c = ClientBuilder.newClient();
-        target = c.target(HelloWorldApplication.BASE_URI);	}
+		server = HelloWorldApplication.startServer();
+		Client c = ClientBuilder.newClient();
+		target = c.target(HelloWorldApplication.BASE_URI);
+	}
 
 	@After
 	public void tearDown() {

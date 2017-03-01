@@ -11,22 +11,20 @@ import org.junit.Test;
 
 public class JAXRSTemplatesTest {
 
-    private Client client;
-    private WebTarget webTarget;
+	private Client client;
+	private WebTarget webTarget;
 
-    @Before
-    public void initClient() {
-        this.client = ClientBuilder.newClient();
-        this.webTarget = this.client.target("https://en.wikipedia.org/wiki/{keyword}");
-    }
+	@Before
+	public void initClient() {
+		this.client = ClientBuilder.newClient();
+		this.webTarget = this.client.target("https://en.wikipedia.org/wiki/{keyword}");
+	}
 
-    @Test
-    public void contentContainsKeyword() {
-        String keyword = "Java";
-        String content = this.webTarget.resolveTemplate("keyword", keyword).
-                request().
-                get(String.class);
-        assertTrue(content.contains(keyword));
-    }
+	@Test
+	public void contentContainsKeyword() {
+		String keyword = "Java";
+		String content = this.webTarget.resolveTemplate("keyword", keyword).request().get(String.class);
+		assertTrue(content.contains(keyword));
+	}
 
 }
