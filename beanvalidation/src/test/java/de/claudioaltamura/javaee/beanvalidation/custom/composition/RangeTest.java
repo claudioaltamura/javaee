@@ -55,8 +55,8 @@ public class RangeTest {
 
 		assertEquals(3, constraintViolations.size() );
 		Iterator<ConstraintViolation<AnotherContent>> iterator = constraintViolations.iterator();
-		assertEquals("too short", iterator.next().getMessage());
 		assertEquals("too long", iterator.next().getMessage());
+		assertEquals("too short", iterator.next().getMessage());
 		assertEquals("may not be null", iterator.next().getMessage());
 	}
 
