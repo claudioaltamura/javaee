@@ -1,4 +1,4 @@
-package de.claudioaltamura.javaee.cdi.arquillian;
+package de.claudioaltamura.javaee.cdi;
 
 public class Greeter {
 

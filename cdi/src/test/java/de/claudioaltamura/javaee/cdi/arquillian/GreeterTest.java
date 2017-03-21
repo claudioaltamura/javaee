@@ -12,6 +12,8 @@ import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import de.claudioaltamura.javaee.cdi.Greeter;
+
 @RunWith(Arquillian.class)
 public class GreeterTest {
 
